@@ -10,7 +10,13 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="manifest" href="manifest.json" />
 		<title>JDMChat App</title>
+		<script type="module">
+			import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+			const el = document.createElement('pwa-update');
+			document.body.appendChild(el);
+		 </script>
 	</head>
 	<body>
 		<div class="join-container">
