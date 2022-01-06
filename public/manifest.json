@@ -1,0 +1,14 @@
+{
+    "name": "JDMChat Progressive Web App",
+    "short_name": "JDMChat PWA",
+    "start_url": "/",
+    "display": "standalone",
+    "scope":"./",
+    "background_color": "#204675",
+    "theme_color": "#3474C2",
+    "description": "",
+    "icons": [
+      
+    ]    
+}
+  
