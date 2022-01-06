@@ -1,6 +1,10 @@
 {
     "name": "JDMChat Progressive Web App",
     "short_name": "JDMChat PWA",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#B12A34",
+    "theme_color": "#B12A34",
     "description": "",
     "icons": [
       {
@@ -13,10 +17,6 @@
         "sizes": "512x512",
         "type": "image/png"
       }
-    ],
-    "start_url": "/index.html",
-    "display": "fullscreen",
-    "theme_color": "#B12A34",
-    "background_color": "#B12A34"
+    ]    
   }
   
