@@ -3,6 +3,7 @@ const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 const currentUserToDisplay = document.getElementById('current-user');
+document.getElementById('msg').focus();
 
 //  get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -13,15 +14,6 @@ const socket = io();
 
 //  join chatroom
 socket.emit('joinRoom', { username, room });
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker
-      .register("/serviceWorker.js")
-      .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err))
-  })
-}
 
 //  get room and users
 socket.on('roomUsers', ({ room, users }) => {
@@ -48,6 +40,10 @@ chatForm.addEventListener('submit', (e) => {
 
   //  emit message to server
   socket.emit('chatMessage', msg);
+  console.log(msg);
+  var hoy = new Date();
+  var hora = hoy.getHours() + ':' + hoy.getMinutes();
+  outputMessage({username: username, time: hora, text: msg});
 
   // clear inputs
   e.target.elements.msg.value = '';
