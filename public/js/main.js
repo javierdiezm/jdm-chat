@@ -41,9 +41,9 @@ chatForm.addEventListener('submit', (e) => {
   //  emit message to server
   socket.emit('chatMessage', msg);
   console.log(msg);
-  var hoy = new Date();
-  var hora = hoy.getHours() + ':' + hoy.getMinutes();
-  outputMessage({username: username, time: hora, text: msg});
+  var time = new Date();
+  var hour = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+  outputMessage({username: username, time: hour, text: msg});
 
   // clear inputs
   e.target.elements.msg.value = '';
